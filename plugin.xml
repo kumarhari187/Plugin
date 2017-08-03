@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="perspective.DockerPerspective"
+            icon="icons/image.gif"
+            id="perspective.DockerPerspective"
+            name="Docker Plugin">
+      </perspective>
+   </extension> 
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="preference.DockerPreferencePage"
+            id="plugin.preference"
+            name="Docker Preference">
+      </page>
+      <page
+             category="plugin.preference"
+             class="preference.DockerListenerPreference"
+             id="preferences.is"
+             name="Docker Listener">
+      </page>
+       
+   </extension>   
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="view.DockerView"
+            id="view.DockerView"
+            name="Docker Container"
+            relationship="stack"
+            relative="left">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension targetID="perspective.DockerPerspective">   
+	      <view
+	            class="view.DockerView"
+	            id="view.DockerView"
+	            relationship="stack"
+	            relative="left"
+	            name="Docker Container">
+	      </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.products">
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+   </extension>
+</plugin>
