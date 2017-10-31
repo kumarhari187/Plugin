@@ -4,47 +4,80 @@
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            class="perspective.DockerPerspective"
-            icon="icons/image.gif"
-            id="perspective.DockerPerspective"
-            name="Docker Plugin">
+	    class="perspective.DockerPerspective"
+	    icon="icons/image.gif"
+	    id="perspective.DockerPerspective"
+	    name="Docker Plugin">
       </perspective>
    </extension> 
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            class="preference.DockerPreferencePage"
-            id="plugin.preference"
-            name="Docker Preference">
+        class="preference.DockerPreferencePage"
+        id="plugin.preference"
+        name="Docker Preference">
       </page>
       <page
-             category="plugin.preference"
-             class="preference.DockerListenerPreference"
-             id="preferences.is"
-             name="Docker Listener">
+         category="plugin.preference"
+         class="preference.DockerListenerPreference"
+         id="preferences.is"
+         name="Docker Listener">
       </page>
        
    </extension>   
    <extension
-         point="org.eclipse.ui.views">
+     point="org.eclipse.ui.views">
+     <view
+       class="view.DockerView"
+       icon="icons/image.gif"
+       id="view.DockerView"
+       name="Docker Container"
+       relationship="stack"
+       relative="top">
+	  </view>
       <view
-            class="view.DockerView"
-            id="view.DockerView"
-            name="Docker Container"
-            relationship="stack"
-            relative="left">
+        class="view.CommitView"
+        icon="icons/image.gif"
+        id="view.CommitView"
+        name="Docker Commit"
+        relationship="stack"
+        relative="bottom">
       </view>
+      <view
+        class="view.RepoView"
+        icon="icons/image.gif"
+        id="view.RepoView"
+        name="Repo View"
+        relationship="stack"
+        relative="left">
+      </view>
+
    </extension>
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
       <perspectiveExtension targetID="perspective.DockerPerspective">   
 	      <view
-	            class="view.DockerView"
-	            id="view.DockerView"
-	            relationship="stack"
-	            relative="left"
-	            name="Docker Container">
+            class="view.DockerView"
+            id="view.DockerView"
+            relationship="stack"
+            relative="left"
+            name="Docker Container">
 	      </view>
+	      <view
+            class="view.RepoView"
+            id="view.RepoView"
+            relationship="stack"
+            relative="right"
+            name="Repo View">
+	      </view>
+	      <view
+            class="view.CommitView"
+            id="view.CommitView"
+            name="Docker Commit"
+            relationship="stack "
+            relative="right">
+      </view>
+	      
       </perspectiveExtension>
    </extension>
    <extension
