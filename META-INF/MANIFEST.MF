@@ -1,12 +1,15 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: DockerPlugin
-Bundle-SymbolicName: DockerPlugin;singleton:=true
+Bundle-Name: Plugin
+Bundle-SymbolicName: Plugin;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Activator: dockerplugin.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.jface,
  org.eclipse.ui,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.eclipse.ui.forms
 Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.ui.forms.widgets
+Bundle-Vendor: Sample
